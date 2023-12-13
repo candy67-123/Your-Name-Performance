@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjgnkjxwij34d"]
+[gd_scene load_steps=5 format=3 uid="uid://cjgnkjxwij34d"]
 
 [ext_resource type="PackedScene" uid="uid://rc4qwko4kax3" path="res://player.tscn" id="1_4rm83"]
 [ext_resource type="PackedScene" uid="uid://d3f3umtyoyib3" path="res://enemy.tscn" id="2_48j1f"]
+[ext_resource type="AudioStream" uid="uid://dijlc3v6i0or3" path="res://bg_music.mp3" id="3_0wdtq"]
+[ext_resource type="AudioStream" uid="uid://25h8317w24nw" path="res://enemy_hit.mp3" id="4_uato8"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4rm83")]
 
 [node name="Enemy" parent="." instance=ExtResource("2_48j1f")]
+
+[node name="BGmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0wdtq")
+
+[node name="EnemyHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uato8")
